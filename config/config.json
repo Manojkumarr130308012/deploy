@@ -1,0 +1,13 @@
+{
+	"app": {
+		"port":3000,
+		"db": {
+			"protocal": "mongodb://",
+			"host": "@ds219191.mlab.com",
+			"port": "19191",
+			"name": "heroku_wht92ncm",
+			"username":"admin",
+			"password":"1234"
+		}
+	}
+}
