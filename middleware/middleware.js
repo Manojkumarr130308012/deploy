@@ -1,6 +1,8 @@
 const express = require("express");
 const server = express();
 const bodyParser=require('body-parser');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../swagger.json');
 const config=require("./../config/config.json")
 var mongoose = require('mongoose');
 server.use(bodyParser.json());
@@ -39,6 +41,8 @@ mongoose.connect(db, {
 	//locationdata
 
 server.use("/user", userRouter);
+server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // server.use("/country", countryRouter);
 // server.use("/states", statesRouter);
 // server.use("/citys", cityRouter);
