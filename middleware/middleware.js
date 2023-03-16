@@ -13,6 +13,8 @@ server.use(cors());
 //locationdata
 
 const userRouter = require('./../router/user');
+const usersRouter = require('./../router/users');
+const postRouter = require('./../router/post');
 const countryRouter = require('./../router/country');
 const statesRouter = require('./../router/states');
 const cityRouter = require('./../router/city');
@@ -41,6 +43,8 @@ mongoose.connect(db, {
 	//locationdata
 
 server.use("/user", userRouter);
+server.use("/users", usersRouter);
+server.use("/post", postRouter);
 server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // server.use("/country", countryRouter);
