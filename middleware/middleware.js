@@ -15,7 +15,7 @@ server.use(cors());
 const userRouter = require('./../router/user');
 const usersRouter = require('./../router/users');
 const postRouter = require('./../router/post');
-const countryRouter = require('./../router/country');
+const locationRouter = require('./../router/location_add');
 const statesRouter = require('./../router/states');
 const cityRouter = require('./../router/city');
 // console.log("enter")
@@ -47,7 +47,7 @@ server.use("/users", usersRouter);
 server.use("/post", postRouter);
 server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// server.use("/country", countryRouter);
+server.use("/location", locationRouter);
 // server.use("/states", statesRouter);
 // server.use("/citys", cityRouter);
 module.exports= server;
